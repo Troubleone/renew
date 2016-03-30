@@ -1,0 +1,99 @@
+*{
+	padding: 0; margin: 0; border: 0;font-family: SimHei;
+	list-style: none;
+	text-decoration: none;
+}
+.container{
+	width: 612px;
+	height: 1000px;
+	margin: 0px auto;
+}
+/*播放栏*/
+.header{
+	width: 100%;
+	height: 164px;
+	background: url(img/header_bg.png);
+}
+.main_song{
+	padding-top: 20px;
+	padding-left: 30px;
+	color: #FFF;
+	font-family: 楷体;
+	font-size: 18px;
+}
+.pro_bar{
+	width: 542px;
+	height: 8px;
+	border: 1px solid #4a8896;
+	background: #367b89;
+	margin: 0 auto;
+	margin-top: 5px;
+}
+.time{
+	padding-left: 35px;
+	color: #FFF;
+}
+.buttons{
+	margin-top: 10px;
+	margin-left: 30px;
+}
+.last,.round{
+	margin-left: 60px;
+}
+.forward,.play,.back,.next{
+	margin-left: 14px;
+}
+/*下载栏*/
+.lefter{
+	width: 94px;
+	height: 788px;
+	float: left;
+	background: url(img/lefter_bg.png);
+}
+.music,.download,.cloud,.bluetooth{
+	margin-top: 60px;
+	margin-left: 28px;
+}
+/*歌曲栏*/
+.righter{
+	margin-left: 94px;
+	height: 788px;
+	background: url(img/righter_bg.png);
+}
+.title{
+	padding-top: 14px;
+	padding-left: 56px;
+}
+.title span{
+	margin-left: 116px;
+}
+#time{
+	margin-left: 98px;
+}
+.songs{
+	margin-top: 10px;
+}
+.song li,a{
+	float: left;
+	color: #5d5d5a;
+	font-weight: lighter;
+	margin-top: 20px;
+	text-align: center;
+}
+.song a{
+	width: 180px;
+}
+.song li{
+	width: 140px;
+}
+.singer{
+	width: 110px;
+	float: left;
+}
+.timer{
+	padding-top: 1px;
+}
+/*底部*/
+.footer{
+	background: url(img/footer_bg.png);
+}
