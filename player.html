@@ -10,11 +10,16 @@
 
 		<div class="header">
 
-		<p class="main_song">陈慧琳 - 记事本</p>
+		<p class="main_song">银临 - 锦鲤抄</p>
 
-			<div class="pro_bar">
+			<div class="processcontainer">
+
+			<div id="processbar" style="width:0px;"></div>
+
+			<audio id="my_audio" src="song.mp3" loop="false" hidden="ture">辣鸡浏览器还想听音乐？</audio>
 
 			</div>
+			<div id="bar_block"></div>
 
 			<p class="time">02:17</p>
 			
@@ -22,7 +27,8 @@
 			    <input type="image" src="img/mark.png" class="mark">
 				<input type="image" src="img/last.png" class="last">
 				<input type="image" src="img/forward.png" class="forward">
-				<input type="image" src="img/play.png" class="play">
+				<input type="image" src="img/pause.png" id="pause" onclick="change_div()">
+				<input type="image" src="img/play.png" class="play" onclick="pauseMove()">
 				<input type="image" src="img/back.png" class="back">
 				<input type="image" src="img/next.png" class="next">
 				<input type="image" src="img/round.png" class="round">
@@ -44,7 +50,7 @@
 				<div class="songs">
 					<h2>
 						<div class="song">
-							<a href="">笔记本</a><a href="">陈慧琳</a><li>4：30</li>
+							<a href="">银临</a><a href="">锦鲤抄</a><li>4：05</li>
 						</div>
 					</h2>
 				</div>
@@ -55,5 +61,37 @@
 			<img src="img/footer_bg.png" alt="">
 		</div>
 	</div>
+<link rel="stylesheet" href="javascript.js">
+<script>
+    var timer = null;
+	function change_div(){
+		var audio = document.getElementById("my_audio");
+		var imgObj = document.getElementById("pause");
+
+		clearInterval(timer);
+        var bar = document.getElementById('processbar');
+        timer = setInterval(function(){
+        bar.style.width = parseInt(processbar.style.width) + 2.14 + "px";
+        },1000)
+
+		if (imgObj.getAttribute("src",2) == "img/pause.png")
+		{
+			imgObj.src = "img/play.png";
+			audio.play();
+		}
+		else
+		{
+			imgObj.src = "img/pause.png"
+			audio.pause();
+			pauseMove();
+		}
+	}
+	var audio = document.getElementById("my_audio");
+
+    function pauseMove(){
+    var bar = document.getElementById('processbar');
+    clearInterval(timer);
+   }
+</script>
 </body>
 </html>

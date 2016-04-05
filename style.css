@@ -21,7 +21,7 @@
 	font-family: 楷体;
 	font-size: 18px;
 }
-.pro_bar{
+.processcontainer{
 	width: 542px;
 	height: 8px;
 	border: 1px solid #4a8896;
@@ -29,6 +29,15 @@
 	margin: 0 auto;
 	margin-top: 5px;
 }
+#processbar{  
+   background:#FFF;  
+   height:100%;
+ }
+.bar_block{
+	width: 8px;
+	height: 8px;
+	background: blue;
+} 
 .time{
 	padding-left: 35px;
 	color: #FFF;
@@ -40,8 +49,15 @@
 .last,.round{
 	margin-left: 60px;
 }
-.forward,.play,.back,.next{
+.forward,#pause,.play,.back,.next{
 	margin-left: 14px;
+}
+.play,#pause{
+	width: 60px;
+	height: 60px;
+}
+.play{
+	display: none;
 }
 /*下载栏*/
 .lefter{
