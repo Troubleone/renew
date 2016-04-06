@@ -21,13 +21,13 @@
 			</div>
 			<div id="bar_block"></div>
 
-			<p class="time">02:17</p>
+			<input id="show_time" type="text" value="0:0">
 			
 			<div class="buttons clearfix">
 			    <input type="image" src="img/mark.png" class="mark">
 				<input type="image" src="img/last.png" class="last">
 				<input type="image" src="img/forward.png" class="forward">
-				<input type="image" src="img/pause.png" id="pause" onclick="change_div()">
+				<input type="image" src="img/pause.png" id="pause" onclick="play()">
 				<input type="image" src="img/play.png" class="play" onclick="pauseMove()">
 				<input type="image" src="img/back.png" class="back">
 				<input type="image" src="img/next.png" class="next">
@@ -50,7 +50,16 @@
 				<div class="songs">
 					<h2>
 						<div class="song">
-							<a href="">银临</a><a href="">锦鲤抄</a><li>4：05</li>
+							<a href="#" onclick="play()">锦鲤抄</a><a href="">银临</a><li>4：05</li>
+						</div>
+						<div class="song">
+							<a href="">记事本</a><a href="">陈慧琳</a><li>4：30</li>
+						</div>
+						<div class="song">
+							<a href="">独活</a><a href="">洪卓立</a><li>4：14</li>
+						</div>
+						<div class="song">
+							<a href="">别问我是谁</a><a href="">郑源</a><li>3：40</li>
 						</div>
 					</h2>
 				</div>
@@ -64,17 +73,21 @@
 <link rel="stylesheet" href="javascript.js">
 <script>
     var timer = null;
-	function change_div(){
+	function play(){
 		var audio = document.getElementById("my_audio");
 		var imgObj = document.getElementById("pause");
-
-		clearInterval(timer);
+		
+		clearInterval(timer);            //进度条
         var bar = document.getElementById('processbar');
         timer = setInterval(function(){
         bar.style.width = parseInt(processbar.style.width) + 2.14 + "px";
         },1000)
 
-		if (imgObj.getAttribute("src",2) == "img/pause.png")
+        
+        clearInterval(se);           //计时器
+        se=setInterval("second()",1);
+        
+		if (imgObj.getAttribute("src",2) == "img/pause.png")   //切换判断
 		{
 			imgObj.src = "img/play.png";
 			audio.play();
@@ -84,14 +97,27 @@
 			imgObj.src = "img/pause.png"
 			audio.pause();
 			pauseMove();
+			pauseclock();
 		}
 	}
 	var audio = document.getElementById("my_audio");
-
-    function pauseMove(){
+	
+    function pauseMove(){                //进度条暂停
     var bar = document.getElementById('processbar');
     clearInterval(timer);
    }
+   
+   function pauseclock(){clearInterval(se);}  //计时器暂停
+   
+    var se,m=0,h=0,s=0,ss=1;           //计时器
+    function second(){
+        if((ss%250)==0){s+=1;ss=1;}  
+        if(s>0 && (s%60)==0){m+=1;s=0;}  
+        if(m>0 && (m%60)==0){h+=1;m=0;}  
+        t=m+":"+s; 
+        document.getElementById("show_time").value=t; 
+        ss+=1;  
+    }  
 </script>
 </body>
 </html>

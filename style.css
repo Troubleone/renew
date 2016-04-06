@@ -1,5 +1,6 @@
 *{
-	padding: 0; margin: 0; border: 0;font-family: SimHei;
+	padding: 0; margin: 0; border: 0;
+	font-family: SimHei;
 	list-style: none;
 	text-decoration: none;
 }
@@ -38,9 +39,11 @@
 	height: 8px;
 	background: blue;
 } 
-.time{
+#show_time{
 	padding-left: 35px;
 	color: #FFF;
+	border:0px;
+	background-color:transparent;
 }
 .buttons{
 	margin-top: 10px;
@@ -98,6 +101,11 @@
 }
 .song a{
 	width: 180px;
+}
+.song a:hover{
+	position:relative;
+	top:1px;
+	left:1px;
 }
 .song li{
 	width: 140px;
